@@ -9,7 +9,7 @@
 <meta name="description" content="学而时习之，不亦乐乎！">
 <meta name="theme-color" content="#000">
 <title>RobohouHome</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595148308320">
+<link rel="shortcut icon" href="/favicon.ico?v=1595148580218">
 <link rel="stylesheet" href="/media/css/mist.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -170,7 +170,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -221,6 +221,8 @@
           <small class="language" data-lan="tag">标签</small>
         </h2>
       </div>
+      
+      
       
       
       
@@ -463,6 +465,189 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://robohou.github.io/post/shi-yong-vscode-kai-fa-ros/"" data-c="
+          &lt;center&gt;&lt;font size=5&gt;使用Visual Studio Code 开发ROS&lt;/font&gt;&lt;/center&gt;
+&lt;center&gt;Robohou 20200529&lt;/center&gt;
+&lt;img src=&#34;/home/hou/Documents/Gridea/images/vscode-ros.png&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;ul&gt;
+&lt;li&gt;前提条件：安装好了ROS（melodic) 和 VSCODE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-vscode安装必要的插件&#34;&gt;1、vscode安装必要的插件&lt;/h2&gt;
+&lt;img src=&#34;/home/hou/Documents/Gridea/images/vs-extendplugs.png&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;h2 id=&#34;2-提前准备好一个ros的catkin-workspace&#34;&gt;2、提前准备好一个ROS的catkin workspace&lt;/h2&gt;
+&lt;p&gt;在workspace下面使用vscode打开&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;$ code .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开之后，第一步安装的ROS插件就会自动识别到这个workspace，同时会出现一个文件夹.vscode&lt;/p&gt;
+&lt;p&gt;里面有两个json文件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;c_cpp_properties.json&lt;/p&gt;
+&lt;p&gt;settings.json&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;c_cpp_properties.json 主要是和头文件 ros/ros.h这种头文件包含有关系。&lt;/p&gt;
+&lt;p&gt;settings.json 暂时好像是和Python的自动补全有关系。&lt;/p&gt;
+&lt;h2 id=&#34;3-将catkin_make放到vscode里面编译&#34;&gt;3、将catkin_make放到vscode里面编译&lt;/h2&gt;
+&lt;p&gt;原来的方式是，在catkin_ws下使用catkin_make命令：如下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;hou@hou-ThinkPad-P52s:~/catkin_ws$ catkin_make
+Base path: /home/hou/catkin_ws
+Source space: /home/hou/catkin_ws/src
+Build space: /home/hou/catkin_ws/build
+Devel space: /home/hou/catkin_ws/devel
+Install space: /home/hou/catkin_ws/install
+####
+#### Running command: &amp;quot;cmake /home/hou/catkin_ws/src -DCATKIN_DEVEL_PREFIX=/home/hou/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hou/catkin_ws/install -G Unix Makefiles&amp;quot; in &amp;quot;/home/hou/catkin_ws/build&amp;quot;
+####
+-- Using CATKIN_DEVEL_PREFIX: /home/hou/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /home/hou/catkin_ws/devel;/opt/ros/melodic
+-- This workspace overlays: /home/hou/catkin_ws/devel;/opt/ros/melodic
+-- Found PythonInterp: /usr/bin/python2 (found suitable version &amp;quot;2.7.17&amp;quot;, minimum required is &amp;quot;2&amp;quot;) 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/hou/catkin_ws/build/test_results
+-- Found gtest sources under &#39;/usr/src/googletest&#39;: gtests will be built
+-- Found gmock sources under &#39;/usr/src/googletest&#39;: gmock will be built
+-- Found PythonInterp: /usr/bin/python2 (found version &amp;quot;2.7.17&amp;quot;) 
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.23
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 1 packages in topological order:
+-- ~~  - beginner_tutorials
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: &#39;beginner_tutorials&#39;
+-- ==&amp;gt; add_subdirectory(beginner_tutorials)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- beginner_tutorials: 1 messages, 1 services
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/hou/catkin_ws/build
+####
+#### Running command: &amp;quot;make -j8 -l8&amp;quot; in &amp;quot;/home/hou/catkin_ws/build&amp;quot;
+####
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _beginner_tutorials_generate_messages_check_deps_AddTwoInts
+[  0%] Built target _beginner_tutorials_generate_messages_check_deps_Num
+[ 19%] Built target beginner_tutorials_generate_messages_py
+[ 28%] Built target beginner_tutorials_generate_messages_cpp
+[ 38%] Built target beginner_tutorials_generate_messages_lisp
+[ 52%] Built target beginner_tutorials_generate_messages_eus
+[ 61%] Built target beginner_tutorials_generate_messages_nodejs
+[ 71%] Built target beginner_tutorials_generate_messages
+[ 71%] Built target speak
+[ 80%] Built target listener
+[ 90%] Built target talker
+[100%] Built target reader
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在讲述如何在vscode里面实现。&lt;/p&gt;
+&lt;p&gt;请阅读vscode编译的task讲解，了解task的作用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://code.visualstudio.com/docs/cpp/config-linux&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;task其实就是把命令写在这个文件里，然后调用运行这个文件。&lt;/p&gt;
+&lt;p&gt;点击菜单栏： Terminal-&amp;gt;Configure default build task，然后生成在.vscode的文件夹出现并同时打开一个task.json文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;c_cpp_properties.json&lt;/p&gt;
+&lt;p&gt;settings.json&lt;/p&gt;
+&lt;p&gt;task.json&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;将task.json 文件内容改成如下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;{
+	&amp;quot;version&amp;quot;: &amp;quot;2.0.0&amp;quot;,
+	&amp;quot;tasks&amp;quot;: [
+		{
+			&amp;quot;label&amp;quot;: &amp;quot;catkin_make&amp;quot;,
+			&amp;quot;type&amp;quot;: &amp;quot;shell&amp;quot;,
+			&amp;quot;command&amp;quot;: &amp;quot;catkin_make&amp;quot;,
+			&amp;quot;args&amp;quot;: [
+				&amp;quot;-j4&amp;quot;,
+				&amp;quot;-DCMAKE_BUILD_TYPE=Release&amp;quot;,
+				&amp;quot;-DCMAKE_EXPORT_COMPILE_COMMANDS=1&amp;quot;,
+				&amp;quot;-DCMAKE_CXX_STANDARD=14&amp;quot;
+			],
+			&amp;quot;problemMatcher&amp;quot;: [
+				&amp;quot;$catkin-gcc&amp;quot;
+			],
+			&amp;quot;group&amp;quot;: {
+				&amp;quot;kind&amp;quot;: &amp;quot;build&amp;quot;,
+				&amp;quot;isDefault&amp;quot;: true
+			}
+		}
+	]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ctrl + shift+B 点击 catkin_make 之后在devel下面会生成一个compile_commands.json的文件&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;/home/hou/Documents/MyDoc/typora-pic/complile_command.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;compile_commands.json的内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;[
+{
+  &amp;quot;directory&amp;quot;: &amp;quot;/home/hou/catkin_ws/build/gtest/googlemock&amp;quot;,
+  &amp;quot;command&amp;quot;: &amp;quot;/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gmock_main.dir/__/googletest/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc&amp;quot;,
+  &amp;quot;file&amp;quot;: &amp;quot;/usr/src/googletest/googletest/src/gtest-all.cc&amp;quot;
+},
+  &amp;quot;directory&amp;quot;: &amp;quot;/home/hou/catkin_ws/build/gtest/googlemock/gtest&amp;quot;,
+  &amp;quot;command&amp;quot;: &amp;quot;/usr/bin/c++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -O3 -DNDEBUG -fPIC    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc&amp;quot;,
+  &amp;quot;file&amp;quot;: &amp;quot;/usr/src/googletest/googletest/src/gtest-all.cc&amp;quot;
+},
+{
+  &amp;quot;directory&amp;quot;: &amp;quot;/home/hou/catkin_ws/build/beginner_tutorials&amp;quot;,
+  &amp;quot;command&amp;quot;: &amp;quot;/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\&amp;quot;beginner_tutorials\\\&amp;quot; -I/home/hou/catkin_ws/devel/include -I/home/hou/catkin_ws/src/beginner_tutorials/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -O3 -DNDEBUG   -std=gnu++14 -o CMakeFiles/reader.dir/src/reader.cpp.o -c /home/hou/catkin_ws/src/beginner_tutorials/src/reader.cpp&amp;quot;,
+  &amp;quot;file&amp;quot;: &amp;quot;/home/hou/catkin_ws/src/beginner_tutorials/src/reader.cpp&amp;quot;
+},
+{
+  &amp;quot;directory&amp;quot;: &amp;quot;/home/hou/catkin_ws/build/beginner_tutorials&amp;quot;,
+  &amp;quot;command&amp;quot;: &amp;quot;/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\&amp;quot;beginner_tutorials\\\&amp;quot; -I/home/hou/catkin_ws/devel/include -I/home/hou/catkin_ws/src/beginner_tutorials/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -O3 -DNDEBUG   -std=gnu++14 -o CMakeFiles/listener.dir/src/listener.cpp.o -c /home/hou/catkin_ws/src/beginner_tutorials/src/listener.cpp&amp;quot;,
+  &amp;quot;file&amp;quot;: &amp;quot;/home/hou/catkin_ws/src/beginner_tutorials/src/listener.cpp&amp;quot;
+},
+{
+  &amp;quot;directory&amp;quot;: &amp;quot;/home/hou/catkin_ws/build/beginner_tutorials&amp;quot;,
+  &amp;quot;command&amp;quot;: &amp;quot;/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\&amp;quot;beginner_tutorials\\\&amp;quot; -I/home/hou/catkin_ws/devel/include -I/home/hou/catkin_ws/src/beginner_tutorials/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -O3 -DNDEBUG   -std=gnu++14 -o CMakeFiles/talker.dir/src/talker.cpp.o -c /home/hou/catkin_ws/src/beginner_tutorials/src/talker.cpp&amp;quot;,
+  &amp;quot;file&amp;quot;: &amp;quot;/home/hou/catkin_ws/src/beginner_tutorials/src/talker.cpp&amp;quot;
+},
+{
+  &amp;quot;directory&amp;quot;: &amp;quot;/home/hou/catkin_ws/build/beginner_tutorials&amp;quot;,
+  &amp;quot;command&amp;quot;: &amp;quot;/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\&amp;quot;beginner_tutorials\\\&amp;quot; -I/home/hou/catkin_ws/devel/include -I/home/hou/catkin_ws/src/beginner_tutorials/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -O3 -DNDEBUG   -std=gnu++14 -o CMakeFiles/speak.dir/src/speak.cpp.o -c /home/hou/catkin_ws/src/beginner_tutorials/src/speak.cpp&amp;quot;,
+  &amp;quot;file&amp;quot;: &amp;quot;/home/hou/catkin_ws/src/beginner_tutorials/src/speak.cpp&amp;quot;
+}
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其实就是规定了到哪里去编译什么文件。&lt;/p&gt;
+&lt;h2 id=&#34;4-在vscode里面编译catkin_ws&#34;&gt;4、在vscode里面编译catkin_ws&lt;/h2&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;/home/hou/Documents/MyDoc/typora-pic/catkin_maketask.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;5-使用vscode打开roscore&#34;&gt;5、使用vscode打开roscore&lt;/h2&gt;
+&lt;p&gt;Ctrl +Shift+p&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ROS:Start Core&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;6-运行功能包节点&#34;&gt;6、运行功能包节点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ROS:Run a Ros excutable (rosrun)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;回车，输入并按照提示选择&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;beginer_tutorials&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;回车，输入并按照提示选择&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;talker&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;https://github.com/ms-iot/vscode-ros/blob/master/doc/spec/debug-ros-nodes.md&lt;/p&gt;
+&lt;p&gt;https://erdalpekel.de/?p=157&lt;/p&gt;
+&lt;p&gt;https://www.ibm.com/developerworks/cn/linux/l-cn-cmake/index.html&lt;/p&gt;
+&lt;p&gt;https://code.visualstudio.com/docs/cpp/config-linux&lt;/p&gt;
+">使用VScode开发ROS</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://robohou.github.io/post/ros-problems-log/"" data-c="

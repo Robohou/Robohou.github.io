@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://robohou.github.io</id>
     <title>RobohouHome</title>
-    <updated>2020-07-19T08:45:09.745Z</updated>
+    <updated>2020-07-19T08:49:44.973Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://robohou.github.io"/>
     <link rel="self" href="https://robohou.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://robohou.github.io/images/avatar.png</logo>
     <icon>https://robohou.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, RobohouHome</rights>
+    <entry>
+        <title type="html"><![CDATA[使用VScode开发ROS]]></title>
+        <id>https://robohou.github.io/post/shi-yong-vscode-kai-fa-ros/</id>
+        <link href="https://robohou.github.io/post/shi-yong-vscode-kai-fa-ros/">
+        </link>
+        <updated>2020-07-19T08:47:51.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ROS-遇到的问题记录]]></title>
         <id>https://robohou.github.io/post/ros-problems-log/</id>
