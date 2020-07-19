@@ -1,94 +1,101 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ROS-problems log | RobohouHome</title>
-<meta name="description" content="学而时习之，不亦乐乎！">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://Robohou.github.io/favicon.ico?v=1595130427641">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://Robohou.github.io/favicon.ico?v=1595130520207">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://Robohou.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ROS-problems log | RobohouHome - Atom Feed" href="https://Robohou.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
+    <meta name="description" content="
+20200522
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
+1：使用rqt_plot指令的时候，想要拉动放大界面，发现命令行报错。
+​		解决办法：升级matplot模块
+2：使用pip安装matplotlib时候网络超时
+​		解决办法：更换pip镜像源到清华大学
+pip i..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://Robohou.github.io">RobohouHome</a></h3>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Robohou.github.io">
+  <img class="avatar" src="https://Robohou.github.io/images/avatar.png?v=1595130520207" alt="">
+  </a>
+  <h1 class="site-title">
+    RobohouHome
+  </h1>
+  <p class="site-description">
+    学而时习之，不亦乐乎！
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
-    </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>ROS-problems log</h1>
-            <p class="article-meta">
-              2020-07-19
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ROS-problems log
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-07-19
+              </span>
+              <span>
+                6 min read
+              </span>
               
-            </p>
+            </div>
             
-            <div class="post-content">
-              <ul>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <ul>
 <li>20200522</li>
 </ul>
 <h4 id="1使用rqt_plot指令的时候想要拉动放大界面发现命令行报错">1：使用rqt_plot指令的时候，想要拉动放大界面，发现命令行报错。</h4>
@@ -185,108 +192,102 @@ find_package(catkin REQUIRED COMPONENTS
 </code></pre>
 <p>OK!</p>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1%E4%BD%BF%E7%94%A8rqt_plot%E6%8C%87%E4%BB%A4%E7%9A%84%E6%97%B6%E5%80%99%E6%83%B3%E8%A6%81%E6%8B%89%E5%8A%A8%E6%94%BE%E5%A4%A7%E7%95%8C%E9%9D%A2%E5%8F%91%E7%8E%B0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8A%A5%E9%94%99">1：使用rqt_plot指令的时候，想要拉动放大界面，发现命令行报错。</a></li>
+<li><a href="#2%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85matplotlib%E6%97%B6%E5%80%99%E7%BD%91%E7%BB%9C%E8%B6%85%E6%97%B6">2：使用pip安装matplotlib时候网络超时</a></li>
+<li><a href="#3-ros%E7%9A%84%E6%BA%90%E7%A0%81%E5%8C%85%E5%92%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8C%85">3: ROS的源码包和二进制包</a></li>
+</ul>
+</li>
+<li><a href="#4-%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0rosrosh">4、无法找到ros/ros.h</a></li>
+</ul>
+</li>
+<li><a href="#comments">Comments</a>
+<ul>
+<li><a href="#5-%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E5%BC%8F">5、串口通信的方式</a></li>
+<li><a href="#6-%E4%BB%A3%E7%A0%81%E8%A1%A5">6、代码补</a></li>
+<li><a href="#7-urdf%E6%96%87%E4%BB%B6%E4%B8%AD%E4%B8%8D%E8%83%BD%E6%9C%89%E4%B8%AD%E6%96%87">7、urdf文件中不能有中文</a></li>
+<li><a href="#8-joint_state_publisher%E8%8A%82%E7%82%B9%E6%94%B9%E6%88%90joint_state_publisher_gui">8、joint_state_publisher节点改成joint_state_publisher_gui</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
           </article>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://Robohou.github.io/post/hello-gridea/">
-                <h3 class="post-title">
-                  Hello Gridea
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-        
-      </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://Robohou.github.io/images/avatar.png?v=1595130427641" class="no-responsive avatar">
-    <div class="text-muted">学而时习之，不亦乐乎！</div>
-    <div class="social-container">
-      
         
-          <a href="gihub.com/robohou" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Robohou.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
         
-      
+
         
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://Robohou.github.io/post/ros-problems-log/">ROS-problems log</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Robohou.github.io/post/about/">关于</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Robohou.github.io/post/hello-gridea/">Hello Gridea</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://Robohou.github.io/tag/DuU-VQdgg/" class="badge success">
-          Gridea
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a> Robohou</a> | <a class="rss" href="https://Robohou.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+
+        <div class="site-footer">
+  Powered by <a> Robohou</a>
+  <a class="rss" href="https://Robohou.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
 
-<script type="application/javascript">
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-AOS.init();
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
-hljs.initHighlightingOnLoad()
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
-</script>
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
-
-
+    </script>
   </body>
 </html>
