@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://robohou.github.io</id>
-    <title>RobohouHome</title>
-    <updated>2020-07-27T14:10:02.590Z</updated>
+    <title>罗伯特吼</title>
+    <updated>2020-07-27T14:12:40.684Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://robohou.github.io"/>
     <link rel="self" href="https://robohou.github.io/atom.xml"/>
     <subtitle>罗伯特吼一吼，地球都要抖一抖！</subtitle>
     <logo>https://robohou.github.io/images/avatar.png</logo>
     <icon>https://robohou.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, RobohouHome</rights>
+    <rights>All rights reserved 2020, 罗伯特吼</rights>
     <entry>
         <title type="html"><![CDATA[开发ROS仿真机器人，键盘+手柄+APP控制]]></title>
         <id>https://robohou.github.io/post/kai-fa-ros-fang-zhen-ji-qi-ren-jian-pan-shou-bing-app-kong-zhi/</id>
